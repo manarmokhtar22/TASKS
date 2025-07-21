@@ -172,10 +172,12 @@
       </div>
 
       <!-- Sidebar Menu -->
+       
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+<?php if (isset($_SESSION['user']['roleID']) && $_SESSION['user']['roleID'] == 1): ?>
           <li class="nav-item menu-open">
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -205,6 +207,9 @@
               </li>
             </ul>
           </li>
+          <?php endif; ?>
+          <?php if (isset($_SESSION['user']['roleID']) && $_SESSION['user']['roleID'] == 0): ?>
+
           <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
@@ -411,6 +416,9 @@
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
+                      <?php endif; ?>
+<?php if (isset($_SESSION['user']['roleID']) && $_SESSION['user']['roleID'] == 1): ?>
+
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="pages/tables/simple.html" class="nav-link">
@@ -558,6 +566,7 @@
               </li>
             </ul>
           </li>
+           <?php endif; ?>
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon far fa-plus-square"></i>

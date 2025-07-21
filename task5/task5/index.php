@@ -28,7 +28,7 @@ $user = $_SESSION['user'];
 <div class="wrapper">
   <!-- head = nav bar + side bar -->
   <?php
-    require_once 'layouts/head.php'
+    include 'layouts/head.php'
   ?>
 
   <!-- Content Wrapper. Contains page content -->
